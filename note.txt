@@ -24,3 +24,7 @@
 - bindActionCreators 유틸 함수 : 액션을 디스패치하기 위해 각 액션 생성 함수를 호출하고 dispatch로 감싸는 번거로움을 줄여줌.
   => 추가로, 파라미터를 함수 형태가 아닌 액션 생성 함수로 이루어진 객체 형태로 넣어주면 connect 함수가 내부적으로 bindActionCreators 작업을 대신 해줌.
 
+- redux-actions 모듈을 사용하면 액션 생성 함수를 더 짧은 코드로 작성할 수 있음. 추가로 리듀서를 사용할 떄도 switch/case 문이 아닌 handleActions 라는 함수를 사용하여 각 액션마다 업데이트 함수를 설정
+
+-  createAction으로 만든 액션 생성 함수는 파라미터로 받아 온 값을 객체 안에 넣을 때 원하는 이름으로 넣는 것이 아니라 action.id, action.todo와 같이 action.payload라는 이름을 공통적으로 넣어 주게 됨.
+   그렇기 때문에, 기존의 업데이트 로직에서도 모두 action.payload 값을 조회하여 업데이트하도록 구현해 주어야 함.
